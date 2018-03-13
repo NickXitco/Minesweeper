@@ -1,23 +1,23 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections;
 
 public class Tile
 {
+    /// <summary>
+    /// enums are basically like integer aliases.
+    /// The first entry starts at 1 and counts up, and each
+    /// entry can be called with Tile.State.entry, and be compared
+    /// to like an integer.
+    /// </summary>
     public enum State
     {
-        unrevealed = 0,
+        unrevealed,
         revealed,
         flag,
         qmark
     };
 
+    //C# doesn't need getters and setters, just to be declared with them.
     public int Mines { get; set; } = 0;
     public State TileState { get; set; } = State.unrevealed;
     public bool IsMine { get; set; } = false;
@@ -29,7 +29,7 @@ public class Tile
 
     public Tile(int x, int y) 
 	{
-        this.X = x;
-        this.Y = y;
+        X = x;
+        Y = y;
 	}
 }
